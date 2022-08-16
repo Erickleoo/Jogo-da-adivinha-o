@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desafio - 3</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <main class="container">
+    <div class="container-quadrado">
+      <div class="container-quadrado-bg">
+        <h1>OJOGO</h1>
+      </div>
+    </div>
+    <section class="game">
+      <div class="game-profile">
+        <img src="./img/image-avatar.png" alt="">
+        <div </div class="game-profile-gap">
+          <div class="game-profile-inputs">
+            <label for="name">Nick:</label>
+            <input class="input-name" type="text" required>
+          </div>
+          <div class="game-profile-inputs">
+            <label for="intervalo">Intervalo:</label>
+            <select name="intervalo" class="intervalo">
+              <option value="option1">Opção 1: 1 a 10</option>
+              <option value="option2">Opção 2: 1 a 100</option>
+              <option value="option3">Opção 3: 1 a 200</option>
+            </select>
+          </div>
+          <button disabled class="button-start">Começar</button>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="game-gameplay">
+        <div class="game-gameplay-text">
+          <p>Olá <span class="name-person"><b>Fulano,</b></span> vamos jogar!</p>
+          <p>De acordo com a opçao de intervalo que
+            você escolheu, descubra o número.</p>
+        </div>
+        <div class="game-gameplay-gap">
+          <div class="game-gameplay-inputs">
+            <label for="number">Digite um número:</label>
+            <input type="number" class="number">
+          </div>
+        </div>
+        <div class="game-gameplay-button">
+          <button class="game-start">Jogar</button>
+          <button class="play-again">Jogar Novamente</button>
+        </div>
+        <div class="game-gameplay-resultado">
+          <p><span class="resultado-numeros"><strong></strong> </span></p>
+          <p class="resultado-tentativas">Você tem 3 tentativas!</p>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>

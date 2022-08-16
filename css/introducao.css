@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto&family=Squada+One&display=swap');
+
+* {
+  padding: o;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--background-bg-primary);
+}
+
+.container {
+  width: 80%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
+  border-radius: 20px;
+  padding: 49px 57px 65px 79px;
+}
+
+.container-quadrado {
+  display: flex;
+  justify-content: center;
+}
+
+.container-quadrado-bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 258px;
+  height: 150px;
+  background: var(--background-bg-secondary);
+  border-radius: 20px;
+  position: absolute;
+  margin-top: -110px;
+}
+
+.container-quadrado-bg h1 {
+  font-family: 'Squada One', cursive;
+  font-size: 4.375rem;
+}
+
+.game {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.game-profile {
+  width: 45%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-profile-gap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.game-profile-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.game-profile-inputs label {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.125rem;
+}
+
+.game-profile input {
+  width: 100%;
+  height: 42px;
+  border: 3px solid #B0A3A3;
+  border-radius: 5px;
+}
+
+.game-profile select {
+  width: 100%;
+  height: 42px;
+  border: 3px solid #B0A3A3;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1.125rem;
+}
+
+.game-profile-gap button {
+  align-self: center;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.125rem;
+  width: 200px;
+  height: 42px;
+  border: 3px solid #000000;
+  border-radius: 20px;
+  background: #7c7f82;
+  color: #fff;
+  cursor: pointer;
+}
+
+.profile-button button:hover {
+  background: #034582;
+}
+
+.game hr {
+  height: 330px;
+  border: 2px solid #B0A3A3;
+  margin-top: 60px;
+}
+
+.game-gameplay {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.game-gameplay-text {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-gameplay-text p {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.125rem;
+}
+
+.game-gameplay-gap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.game-gameplay-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.game-gameplay-inputs label {
+  align-self: center;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.125rem;
+}
+
+.game-gameplay-inputs input {
+  align-self: center;
+  width: 90%;
+  height: 42px;
+  border: 3px solid #B0A3A3;
+  border-radius: 5px;
+}
+
+.game-start {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.125rem;
+  width: 200px;
+  height: 42px;
+  border: 3px solid #000000;
+  border-radius: 20px;
+  background: var(--background-bg-primary);
+  color: #fff;
+  cursor: pointer;
+}
+
+.game-start:hover {
+  background: #995402;
+}
+
+.game-gameplay-resultado {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-gameplay-resultado p {
+  font-size: 1.5625rem;
+}
+
+.play-again {
+  display: none;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1rem;
+  width: 200px;
+  height: 42px;
+  border: 3px solid #000000;
+  border-radius: 20px;
+  background: #04B51B;
+  color: #fff;
+  cursor: pointer;
+}
+
+.play-again:hover {
+  background: #013608;
+}
+
+.acertou {
+  color: #04B51B;
+  font-size: 1.25rem;
+}
+
+.errou {
+  color: red;
+}
+
+@media (max-width: 834px) {
+  .game-gameplay-resultado {
+    width: 320px;
+  }
+
+  .game-gameplay-resultado p {
+    font-size: 1.25rem;
+  }
+}
+
+
+@media (max-width: 690px) {
+  body {
+    height: 1421px;
+  }
+
+  .container {
+    width: 320px;
+    height: 1190px;
+  }
+
+  .container-quadrado {
+    margin-right: 20px;
+  }
+
+  .game {
+    margin-top: 20px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .game-profile {
+    margin-right: 20px;
+    width: 300px;
+    height: 42px;
+  }
+
+  .game-profile-gap {
+    gap: 60px;
+  }
+
+  .game-profile-inputs {
+    gap: 20px;
+  }
+
+  .game-profile-inputs label {
+    font-size: 0.875rem;
+  }
+
+  .game-profile input {
+    width: 100%;
+  }
+
+  .game-profile select {
+    width: 100%;
+  }
+
+  .game hr {
+    display: none;
+  }
+
+  .game-gameplay {
+    margin-bottom: 120px;
+    margin-right: 20px;
+    width: 300px;
+  }
+
+  .game-gameplay-text {
+    width: 300px;
+  }
+
+  .game-gameplay-text p {
+    font-size: 1.25rem;
+  }
+
+  .game-gameplay-gap {
+    gap: 60px;
+  }
+
+  .game-gameplay-inputs {
+    gap: 20px;
+  }
+
+  .game-gameplay-inputs label {
+    align-self: flex-start;
+    font-size: 0.875rem;
+  }
+
+  .game-gameplay input {
+    width: 100%;
+  }
+}
