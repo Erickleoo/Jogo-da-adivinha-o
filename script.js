@@ -8,14 +8,23 @@ let attemptsGame = document.querySelector(".resultado-tentativas");
 let buttonPlayAgain = document.querySelector(".play-again");
 
 
-// Função pra desabailitar o botão começar caso o usuário não digite nada!
+// Função pra desabailitar os botões começar caso o usuário não digite nada!
 function disabledButton() {
   if (inputName.value.length == 0) {
     buttonStart.disabled = true;
     buttonStart.style.backgroundColor = "#7c7f82";
-  } else {
+  }
+  else {
     buttonStart.disabled = false;
     buttonStart.style.backgroundColor = "#1180E6";
+  }
+  if (numberInput.value.length == 0) {
+    buttonPlay.disabled = true;
+    buttonPlay.style.backgroundColor = "#7c7f82";
+  }
+  else {
+    buttonPlay.disabled = false;
+    buttonPlay.style.backgroundColor = "#f2890d";
   }
 }
 
@@ -132,6 +141,7 @@ function refresh() {
   window.parent.location = window.parent.location.href;
 }
 
+numberInput.addEventListener("input", disabledButton)
 inputName.addEventListener("input", disabledButton);
 buttonStart.addEventListener("click", displayName);
 buttonPlay.addEventListener("click", play);
