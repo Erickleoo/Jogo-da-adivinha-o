@@ -7,7 +7,6 @@ let resultadoNumeros = document.querySelector(".resultado-numeros");
 let attemptsGame = document.querySelector(".resultado-tentativas");
 let buttonPlayAgain = document.querySelector(".play-again");
 
-
 // Função pra desabailitar os botões começar caso o usuário não digite nada!
 function disabledButton() {
   if (inputName.value.length == 0) {
@@ -26,14 +25,14 @@ function disabledButton() {
     buttonPlay.disabled = false;
     buttonPlay.style.backgroundColor = "#f2890d";
   }
-}
+};
 
 // Função pra mostrar o nome do usuário !
 const displayName = () => {
   namePerson.innerHTML = `<b>${inputName.value}</b>`;
   inputName.disabled = true;
   selectValues();
-}
+};
 
 // função que seleciona os valores escolhido pelo o usuário!
 let result;
@@ -47,7 +46,6 @@ function selectValues() {
       break;
     case "option2":
       result = generateSecretNumber.option2();
-      console.log(result);
       break;
     case "option3":
       result = generateSecretNumber.option3();
@@ -57,7 +55,7 @@ function selectValues() {
       break;
   }
   select.disabled = true;
-}
+};
 
 // Objeto com funções para selecionar o tipo de intervalo escolhido pelo usuário!
 const generateSecretNumber = {
@@ -102,7 +100,7 @@ function gameOver(situation) {
     default:
       break;
   }
-}
+};
 
 // Função que faz o jogo funcionar mostrando os resultados!
 let qntAttempts = 3;
@@ -129,25 +127,20 @@ function play() {
   attemptsGame.innerHTML = `Você ainda tem ${qntAttempts} tentativas!`;
   if (qntAttempts == 0) {
     situation = "Errou";
-    attemptsGame.innerHTML = `Você errou o número era <b>${result}!</b>`;
+    attemptsGame.innerHTML = `Você errou, o número era <b>${result}!</b>`;
     gameOver(situation);
     buttonPlayAgain.style.display = "block";
     buttonPlay.style.display = "none";
   }
-}
+};
 
 // Função pra recarregar a página!
 function refresh() {
   window.parent.location = window.parent.location.href;
-}
+};
 
 numberInput.addEventListener("input", disabledButton)
 inputName.addEventListener("input", disabledButton);
 buttonStart.addEventListener("click", displayName);
 buttonPlay.addEventListener("click", play);
 buttonPlayAgain.addEventListener("click", refresh)
-
-
-
-
-
