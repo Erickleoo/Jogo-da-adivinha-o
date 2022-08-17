@@ -139,7 +139,7 @@ function refresh() {
   window.parent.location = window.parent.location.href;
 };
 
-numberInput.addEventListener("input", disabledButton)
+numberInput.addEventListener("input", disabledButton);
 inputName.addEventListener("input", disabledButton);
 buttonStart.addEventListener("click", displayName);
 buttonPlay.addEventListener("click", play);
