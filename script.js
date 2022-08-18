@@ -143,4 +143,4 @@ numberInput.addEventListener("input", disabledButton);
 inputName.addEventListener("input", disabledButton);
 buttonStart.addEventListener("click", displayName);
 buttonPlay.addEventListener("click", play);
-buttonPlayAgain.addEventListener("click", refresh)
+buttonPlayAgain.addEventListener("click", refresh);
