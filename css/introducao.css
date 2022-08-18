@@ -87,6 +87,8 @@ body {
   height: 42px;
   border: 3px solid var(--line-color);
   border-radius: 5px;
+  font-family: 'Squada One', cursive;
+  font-size: 1.125rem;
 }
 
 .game-profile select {
@@ -169,6 +171,8 @@ body {
   height: 42px;
   border: 3px solid #B0A3A3;
   border-radius: 5px;
+  font-family: 'Squada One', cursive;
+  font-size: 1.125rem;
 }
 
 .game-start {
@@ -208,6 +212,25 @@ body {
   background: #04B51B;
   color: #fff;
   cursor: pointer;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  animation: kreep 0.7s ease 2s infinite alternate;
+}
+
+@keyframes kreep {
+  0% {
+    -webkit-transform: scale(1.1, .9);
+    transform: scale(1.1, .9);
+  }
+
+  50% {
+    -webkit-transform: scale(.9, 1.1) translateY(-.5rem)
+  }
+
+  70% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
 }
 
 .play-again:hover {
