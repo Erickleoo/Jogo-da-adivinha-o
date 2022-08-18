@@ -57,7 +57,7 @@ function selectValues() {
   select.disabled = true;
 };
 
-// Objeto com funções para selecionar o tipo de intervalo escolhido pelo usuário!
+// Objeto com funções para calcular a opção escolhida pelo usuário
 const generateSecretNumber = {
   option1: () => {
     let min = 1;
