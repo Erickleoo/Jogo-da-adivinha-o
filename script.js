@@ -92,8 +92,8 @@ function gameOver(situation) {
     case 'Numero menor':
       resultadoNumeros.innerHTML = "<b>O número digitado é menor!</b>";
       break;
-    case 'Errou':
-      resultadoNumeros.innerHTML = "<b>Você errou!</b>";
+    case 'Game Over':
+      resultadoNumeros.innerHTML = "<b>Game Over!</b>";
       resultadoNumeros.classList.add("errou");
       break;
 
@@ -126,7 +126,7 @@ function play() {
   numberInput.value = "";
   attemptsGame.innerHTML = `Você ainda tem ${qntAttempts} tentativas!`;
   if (qntAttempts == 0) {
-    situation = "Errou";
+    situation = "Game Over";
     attemptsGame.innerHTML = `Você errou, o número era <b>${result}!</b>`;
     gameOver(situation);
     buttonPlayAgain.style.display = "block";
