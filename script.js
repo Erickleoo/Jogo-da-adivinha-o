@@ -87,10 +87,10 @@ function gameOver(situation) {
       resultadoNumeros.classList.add("acertou");
       break;
     case 'Numero maior':
-      resultadoNumeros.innerHTML = "<b>O número é maior!</b>";
+      resultadoNumeros.innerHTML = "<b>O número digitado é maior!</b>";
       break;
     case 'Numero menor':
-      resultadoNumeros.innerHTML = "<b>O número é menor!</b>";
+      resultadoNumeros.innerHTML = "<b>O número digitado é menor!</b>";
       break;
     case 'Errou':
       resultadoNumeros.innerHTML = "<b>Você errou!</b>";
