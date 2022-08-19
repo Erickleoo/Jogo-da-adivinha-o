@@ -7,26 +7,6 @@ let resultadoNumeros = document.querySelector(".resultado-numeros");
 let attemptsGame = document.querySelector(".resultado-tentativas");
 let buttonPlayAgain = document.querySelector(".play-again");
 
-// Função pra desabailitar os botões começar caso o usuário não digite nada!
-function disabledButton() {
-  if (inputName.value.length == 0) {
-    buttonStart.disabled = true;
-    buttonStart.style.backgroundColor = "#7c7f82";
-  }
-  else {
-    buttonStart.disabled = false;
-    buttonStart.style.backgroundColor = "#1180E6";
-  }
-  if (numberInput.value.length == 0) {
-    buttonPlay.disabled = true;
-    buttonPlay.style.backgroundColor = "#7c7f82";
-  }
-  else {
-    buttonPlay.disabled = false;
-    buttonPlay.style.backgroundColor = "#f2890d";
-  }
-};
-
 // Função pra mostrar o nome do usuário !
 const displayName = () => {
   namePerson.innerHTML = `<b>${inputName.value}</b>`;
@@ -42,13 +22,13 @@ function selectValues() {
 
   switch (value) {
     case "option1":
-      result = generateSecretNumber.option1();
+      result = calcular(1, 10)
       break;
     case "option2":
-      result = generateSecretNumber.option2();
+      result = calcular(1, 100)
       break;
     case "option3":
-      result = generateSecretNumber.option3();
+      result = calcular(1, 200)
       break;
 
     default:
@@ -57,27 +37,11 @@ function selectValues() {
   select.disabled = true;
 };
 
-// Objeto com funções para calcular a opção escolhida pelo usuário
-const generateSecretNumber = {
-  option1: () => {
-    let min = 1;
-    let max = 10;
-    let secretNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-    return secretNumber;
-  },
-  option2: () => {
-    let min = 1;
-    let max = 100;
-    let secretNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-    return secretNumber;
-  },
-  option3: () => {
-    let min = 1;
-    let max = 200;
-    let secretNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-    return secretNumber;
-  }
-};
+// Função para calcular a opção escolhida pelo usuário
+function calcular(min, max) {
+  let secretNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+  return secretNumber
+}
 
 // Função que informa se o numero é maior menor ou se o usuário errou!
 function gameOver(situation) {
@@ -137,6 +101,26 @@ function play() {
 // Função pra recarregar a página!
 function refresh() {
   window.parent.location = window.parent.location.href;
+};
+
+// Função pra desabailitar os botões começar caso o usuário não digite nada!
+function disabledButton() {
+  if (inputName.value.length == 0) {
+    buttonStart.disabled = true;
+    buttonStart.style.backgroundColor = "#7c7f82";
+  }
+  else {
+    buttonStart.disabled = false;
+    buttonStart.style.backgroundColor = "#1180E6";
+  }
+  if (numberInput.value.length == 0) {
+    buttonPlay.disabled = true;
+    buttonPlay.style.backgroundColor = "#7c7f82";
+  }
+  else {
+    buttonPlay.disabled = false;
+    buttonPlay.style.backgroundColor = "#f2890d";
+  }
 };
 
 numberInput.addEventListener("input", disabledButton);
