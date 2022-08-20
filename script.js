@@ -47,7 +47,7 @@ function calcular(min, max) {
 function gameOver(situation) {
   switch (situation) {
     case "Acertou":
-      resultadoNumeros.innerHTML = "<b>Parabéns, você conseguiu adivinhar!</b>";
+      resultadoNumeros.innerHTML = "Parabéns, você conseguiu adivinhar!";
       resultadoNumeros.classList.add("acertou");
       break;
     case 'Numero maior':

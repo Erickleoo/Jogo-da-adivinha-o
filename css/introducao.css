@@ -336,4 +336,8 @@ body {
   .game-gameplay input {
     width: 100%;
   }
+
+  .game-gameplay-resultado p {
+    text-align: center;
+  }
 }
