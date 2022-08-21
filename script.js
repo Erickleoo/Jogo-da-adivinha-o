@@ -6,6 +6,7 @@ let inputNumber = document.querySelector(".number");
 let htmlResultGame = document.querySelector(".resultado-numeros");
 let htmlAttemptsResult = document.querySelector(".resultado-tentativas");
 let buttonPlayAgain = document.querySelector(".play-again");
+let qntAttempts = 3;
 
 // Função pra mostrar o nome do usuário !
 const displayName = () => {
@@ -67,7 +68,6 @@ function gameOver(situation) {
 };
 
 // Função que faz o jogo funcionar mostrando os resultados!
-let qntAttempts = 3;
 function play() {
   htmlAttemptsResult.innerHTML = qntAttempts;
 
@@ -79,12 +79,12 @@ function play() {
   }
   else if (inputNumber.value > result) {
     situation = "Numero maior";
-    qntAttempts -= 1;
+    qntAttempts--;
     gameOver(situation);
   }
   else if (inputNumber.value < result) {
     situation = "Numero menor";
-    qntAttempts -= 1;
+    qntAttempts--;
     gameOver(situation);
   }
   inputNumber.value = "";
