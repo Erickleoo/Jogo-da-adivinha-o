@@ -1,15 +1,15 @@
 let inputName = document.querySelector(".input-name");
 let buttonStart = document.querySelector(".button-start");
-let namePerson = document.querySelector(".name-person");
+let htmlNamePerson = document.querySelector(".name-person");
 let buttonPlay = document.querySelector(".game-start");
-let numberInput = document.querySelector(".number");
-let resultadoNumeros = document.querySelector(".resultado-numeros");
-let attemptsGame = document.querySelector(".resultado-tentativas");
+let inputNumber = document.querySelector(".number");
+let htmlResultGame = document.querySelector(".resultado-numeros");
+let htmlAttemptsResult = document.querySelector(".resultado-tentativas");
 let buttonPlayAgain = document.querySelector(".play-again");
 
 // Função pra mostrar o nome do usuário !
 const displayName = () => {
-  namePerson.innerHTML = `<b>${inputName.value}</b>`;
+  htmlNamePerson.innerHTML = `<b>${inputName.value}</b>`;
   inputName.disabled = true;
   selectValues();
 };
@@ -47,18 +47,18 @@ function calcular(min, max) {
 function gameOver(situation) {
   switch (situation) {
     case "Acertou":
-      resultadoNumeros.innerHTML = "Parabéns, você conseguiu adivinhar!";
-      resultadoNumeros.classList.add("acertou");
+      htmlResultGame.innerHTML = "Parabéns, você conseguiu adivinhar!";
+      htmlResultGame.classList.add("acertou");
       break;
     case 'Numero maior':
-      resultadoNumeros.innerHTML = "<b>O número digitado é maior!</b>";
+      htmlResultGame.innerHTML = "<b>O número digitado é maior!</b>";
       break;
     case 'Numero menor':
-      resultadoNumeros.innerHTML = "<b>O número digitado é menor!</b>";
+      htmlResultGame.innerHTML = "<b>O número digitado é menor!</b>";
       break;
     case 'Game Over':
-      resultadoNumeros.innerHTML = "<b>Game Over!</b>";
-      resultadoNumeros.classList.add("errou");
+      htmlResultGame.innerHTML = "<b>Game Over!</b>";
+      htmlResultGame.classList.add("errou");
       break;
 
     default:
@@ -69,29 +69,29 @@ function gameOver(situation) {
 // Função que faz o jogo funcionar mostrando os resultados!
 let qntAttempts = 3;
 function play() {
-  attemptsGame.innerHTML = qntAttempts;
+  htmlAttemptsResult.innerHTML = qntAttempts;
 
-  if (numberInput.value == result) {
+  if (inputNumber.value == result) {
     situation = "Acertou";
     gameOver(situation);
     buttonPlayAgain.style.display = "block";
     buttonPlay.style.display = "none";
   }
-  else if (numberInput.value > result) {
+  else if (inputNumber.value > result) {
     situation = "Numero maior";
     qntAttempts -= 1;
     gameOver(situation);
   }
-  else if (numberInput.value < result) {
+  else if (inputNumber.value < result) {
     situation = "Numero menor";
     qntAttempts -= 1;
     gameOver(situation);
   }
-  numberInput.value = "";
-  attemptsGame.innerHTML = `Você ainda tem ${qntAttempts} tentativas!`;
+  inputNumber.value = "";
+  htmlAttemptsResult.innerHTML = `Você ainda tem ${qntAttempts} tentativas!`;
   if (qntAttempts == 0) {
     situation = "Game Over";
-    attemptsGame.innerHTML = `Você errou, o número era <b>${result}!</b>`;
+    htmlAttemptsResult.innerHTML = `Você errou, o número era <b>${result}!</b>`;
     gameOver(situation);
     buttonPlayAgain.style.display = "block";
     buttonPlay.style.display = "none";
@@ -113,7 +113,7 @@ function disabledButton() {
     buttonStart.disabled = false;
     buttonStart.style.backgroundColor = "#1180E6";
   }
-  if (numberInput.value.length == 0) {
+  if (inputNumber.value.length == 0) {
     buttonPlay.disabled = true;
     buttonPlay.style.backgroundColor = "#7c7f82";
   }
@@ -123,7 +123,7 @@ function disabledButton() {
   }
 };
 
-numberInput.addEventListener("input", disabledButton);
+inputNumber.addEventListener("input", disabledButton);
 inputName.addEventListener("input", disabledButton);
 buttonStart.addEventListener("click", displayName);
 buttonPlay.addEventListener("click", play);
